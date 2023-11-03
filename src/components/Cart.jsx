@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 
 import { CartContext } from '../store/shopping-cart-context';
+import Button from './Button';
 
 export default function Cart({}) {
-  const { items, updateItemQty } = useContext(CartContext);
+  const { type, items, updateItemQty } = useContext(CartContext);
+  // console.log(type);
 
   const totalPrice = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -38,6 +40,8 @@ export default function Cart({}) {
       <p id="cart-total-price">
         Cart Total: <strong>{formattedTotalPrice}</strong>
       </p>
+      <Button id="id" />
+      <Button id="id" />
     </div>
   );
 }
